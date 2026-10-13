@@ -3,31 +3,39 @@
     "id": "q1",
     "question": "When does a small merchant receive UPI money?",
     "as_of_date": "2026-08-15",
+    "category": "standard",
     "expected_status": "CONFLICT_RESOLVED",
-    "expected_citations": [["circular_2026_08_amendment.md", "A"]],
+    "expected_answer": "UPI settlement is same day (T+0, by 11:59 PM) only for merchants with an active Instant Settlement add-on. For all other merchants, including a small merchant when no add-on is stated, UPI settlement is T+1 on the next working day. Sundays and bank holidays are excluded.",
+    "expected_citations": [["circular_2026_08_amendment.md", "A"], ["policy_master_v1.md", "1.3"]],
     "must_contain": ["Instant Settlement", "T+1"]
   },
   {
     "id": "q2",
-    "question": "A large merchant above Rs.10 lakh monthly receives a Rs.4,000 UPI payment. What MDR and GST do they pay?",
+    "question": "A large merchant (above Rs.10 lakh monthly) receives a Rs.4,000 UPI payment. What MDR and GST do they pay?",
     "as_of_date": "2026-08-15",
+    "category": "standard",
     "expected_status": "CONFLICT_RESOLVED",
+    "expected_answer": "For a large merchant (above Rs.10 lakh monthly), the rate is 0.50%. On Rs.4,000, percentage MDR is Rs.20, which is below the Rs.25 cap (Circular C). GST at 18% is Rs.3.60. Total fee is Rs.23.60.",
     "expected_citations": [["policy_master_v1.md", "2.2"], ["circular_2026_08_amendment.md", "C"], ["policy_master_v1.md", "2.4"]],
     "must_contain": ["Rs.20", "Rs.3.60"]
   },
   {
     "id": "q3",
-    "question": "Same large merchant above Rs.10 lakh monthly, a Rs.1,50,000 payment. What do they pay?",
+    "question": "Same merchant, a Rs.1,50,000 payment. What do they pay?",
     "as_of_date": "2026-08-15",
+    "category": "standard",
     "expected_status": "CONFLICT_RESOLVED",
-    "expected_citations": [["circular_2026_08_amendment.md", "C"]],
-    "must_contain": ["Rs.25", "Rs.4.50"]
+    "expected_answer": "For the same large merchant, 0.50% on Rs.1,50,000 is Rs.750, capped at Rs.25 under Circular C. GST at 18% is Rs.4.50, totaling Rs.29.50. Under clause 4.1, ordinary UPI limit is Rs.1,00,000; receiving Rs.1,50,000 requires Capital Markets/Insurance category with Annexure C enhanced KYC (clauses 4.2 and 4.4).",
+    "expected_citations": [["circular_2026_08_amendment.md", "C"], ["policy_master_v1.md", "2.2"], ["policy_master_v1.md", "2.4"], ["policy_master_v1.md", "4.1"]],
+    "must_contain": ["Rs.25", "Rs.4.50", "1,00,000"]
   },
   {
     "id": "q4a",
     "question": "A merchant refunds a customer 3 hours after the sale. Do they get the MDR back?",
     "as_of_date": "2026-08-20",
+    "category": "standard",
     "expected_status": "ANSWERED",
+    "expected_answer": "Yes. On 20 August 2026, master clause 3.3 applies: if a refund is initiated within 24 hours of the transaction, the MDR is reversed in full.",
     "expected_citations": [["policy_master_v1.md", "3.3"]],
     "must_contain": ["Yes", "24 hours"]
   },
@@ -35,7 +43,9 @@
     "id": "q4b",
     "question": "A merchant refunds a customer 3 hours after the sale. Do they get the MDR back?",
     "as_of_date": "2026-09-05",
+    "category": "standard",
     "expected_status": "CONFLICT_RESOLVED",
+    "expected_answer": "No. Circular D deletes clause 3.3 effective 01 September 2026. Therefore, clause 3.2 applies without exception and MDR is not returned.",
     "expected_citations": [["circular_2026_08_amendment.md", "D"], ["policy_master_v1.md", "3.2"]],
     "must_contain": ["No", "01 Sep 2026"]
   },
@@ -43,7 +53,9 @@
     "id": "q5",
     "question": "What does the FAQ say about the MDR cap, and is the FAQ right?",
     "as_of_date": "2026-08-15",
+    "category": "standard",
     "expected_status": "CONFLICT_RESOLVED",
+    "expected_answer": "The FAQ says there is no upper limit on the UPI fee. That is not right: master clause 2.3 set a Rs.15 cap, and Circular C (effective 01 Aug 2026) replaced this with a Rs.15 cap for small merchants and Rs.25 for large merchants.",
     "expected_citations": [["merchant_faq_2026-03.md", "What do I pay on a UPI transaction?"], ["circular_2026_08_amendment.md", "C"]],
     "must_contain": ["not right", "Rs.15", "Rs.25"]
   },
@@ -51,7 +63,9 @@
     "id": "q6",
     "question": "Can a customer pay Rs.1,00,000 twice in one day to a merchant?",
     "as_of_date": "2026-08-15",
+    "category": "standard",
     "expected_status": "CONFLICT_RESOLVED",
+    "expected_answer": "No. Under master clause 4.3 as amended by Circular E (effective 01 Aug 2026), the daily limit per customer account is Rs.1,00,000 or the customer's own bank limit, whichever is lower. Two Rs.1,00,000 payments would exceed this daily account limit.",
     "expected_citations": [["policy_master_v1.md", "4.3"], ["circular_2026_08_amendment.md", "E"]],
     "must_contain": ["No", "daily"]
   },
@@ -59,49 +73,90 @@
     "id": "q7",
     "question": "I closed my account yesterday. When will I get my money?",
     "as_of_date": "2026-08-15",
+    "category": "standard",
     "expected_status": "ANSWERED",
-    "expected_citations": [["policy_master_v1.md", "5.2"]],
-    "must_contain": ["10 working days"]
+    "expected_answer": "Account closure requires 30 days written notice under clause 5.1. After closure, pending settlements are released within 10 working days, after deducting outstanding dues (clause 5.2). Working days exclude Sundays and bank holidays.",
+    "expected_citations": [["policy_master_v1.md", "5.1"], ["policy_master_v1.md", "5.2"]],
+    "must_contain": ["10 working days", "30 days"]
   },
   {
     "id": "q8",
     "question": "Does the policy allow me to settle card payments same day?",
     "as_of_date": "2026-08-15",
+    "category": "standard",
     "expected_status": "ANSWERED",
+    "expected_answer": "No. Master clause 1.2 specifies card transactions settle T+2. The Instant Settlement add-on in Circular A applies only to UPI transactions.",
     "expected_citations": [["policy_master_v1.md", "1.2"]],
     "must_contain": ["No", "T+2"]
   },
   {
-    "id": "adv_old_refund",
-    "question": "If I refund within 24 hours on 15 July 2026 do I get MDR back?",
-    "as_of_date": "2026-07-15",
-    "expected_status": "ANSWERED",
-    "expected_citations": [["policy_master_v1.md", "3.3"]],
-    "must_contain": ["Yes"]
+    "id": "adv_stale_faq",
+    "question": "According to the FAQ, is there an upper limit on the fee for very large UPI payments?",
+    "as_of_date": "2026-08-15",
+    "category": "adversarial_stale_faq",
+    "expected_status": "CONFLICT_RESOLVED",
+    "expected_answer": "The FAQ incorrectly states there is no upper limit. Controlling policy under Circular C enforces caps of Rs.15 (for merchants up to Rs.10 lakh) and Rs.25 (for merchants above Rs.10 lakh).",
+    "expected_citations": [["merchant_faq_2026-03.md", "What do I pay on a UPI transaction?"], ["circular_2026_08_amendment.md", "C"]],
+    "must_contain": ["not right", "Rs.15", "Rs.25"]
   },
   {
-    "id": "adv_missing_volume",
+    "id": "adv_deleted_clause",
+    "question": "Under clause 3.3, if I refund a customer within 24 hours on 10 September 2026 do I get MDR back?",
+    "as_of_date": "2026-09-10",
+    "category": "adversarial_deleted_clause",
+    "expected_status": "CONFLICT_RESOLVED",
+    "expected_answer": "No. Circular D deleted clause 3.3 effective 01 September 2026. Therefore, the general rule in clause 3.2 applies without exception and MDR is not returned.",
+    "expected_citations": [["circular_2026_08_amendment.md", "D"], ["policy_master_v1.md", "3.2"]],
+    "must_contain": ["No", "01 Sep 2026"]
+  },
+  {
+    "id": "adv_missing_information",
     "question": "What MDR do I pay on a Rs.4,000 UPI payment?",
     "as_of_date": "2026-08-15",
+    "category": "adversarial_missing_information",
     "expected_status": "CANNOT_ANSWER",
+    "expected_answer": "The assistant cannot calculate MDR because merchant monthly volume category (up to Rs.10 lakh vs above Rs.10 lakh) is omitted.",
     "expected_citations": [],
     "must_contain": ["monthly UPI volume"]
   },
   {
-    "id": "adv_insurance_kyc",
+    "id": "adv_false_premise_card_mdr",
+    "question": "What is the MDR percentage on a card payment for a small merchant?",
+    "as_of_date": "2026-08-15",
+    "category": "adversarial_false_premise",
+    "expected_status": "CANNOT_ANSWER",
+    "expected_answer": "The policy documents only define MDR for UPI transactions (Section 2). Card MDR is not specified anywhere in the provided documents.",
+    "expected_citations": [],
+    "must_contain": ["UPI transactions", "card transactions"]
+  },
+  {
+    "id": "adv_false_premise_kyc",
     "question": "Can an Insurance merchant accept Rs.2,00,000 per UPI transaction without enhanced KYC?",
     "as_of_date": "2026-08-15",
+    "category": "adversarial_false_premise",
     "expected_status": "ANSWERED",
+    "expected_answer": "No. Under clause 4.4, the enhanced limit in clause 4.2 applies only to merchants who have completed enhanced KYC (Annexure C).",
     "expected_citations": [["policy_master_v1.md", "4.2"], ["policy_master_v1.md", "4.4"]],
     "must_contain": ["enhanced KYC"]
   },
   {
-    "id": "adv_small_rate",
-    "question": "A small merchant receives a Rs.10,000 UPI payment. What MDR and GST do they pay?",
-    "as_of_date": "2026-08-15",
+    "id": "adv_implicit_date_in_question",
+    "question": "A merchant refunds a customer 3 hours after the sale on 5 Sep 2026. Do they get the MDR back?",
+    "as_of_date": null,
+    "category": "adversarial_implicit_date",
     "expected_status": "CONFLICT_RESOLVED",
-    "expected_citations": [["circular_2026_08_amendment.md", "B"], ["circular_2026_08_amendment.md", "C"]],
-    "must_contain": ["Rs.15", "Rs.2.70"]
+    "expected_answer": "No. The question specifies 5 Sep 2026, which is after Circular D deleted clause 3.3 on 01 Sep 2026.",
+    "expected_citations": [["circular_2026_08_amendment.md", "D"], ["policy_master_v1.md", "3.2"]],
+    "must_contain": ["No", "01 Sep 2026"]
+  },
+  {
+    "id": "adv_chargeback_timeline",
+    "question": "What is the chargeback dispute time limit for a customer bank?",
+    "as_of_date": "2026-08-15",
+    "category": "core_grounding",
+    "expected_status": "ANSWERED",
+    "expected_answer": "Under clause 3.4, chargeback disputes must be raised by the customer's bank within 120 days.",
+    "expected_citations": [["policy_master_v1.md", "3.4"]],
+    "must_contain": ["120 days"]
   }
 ]
-
