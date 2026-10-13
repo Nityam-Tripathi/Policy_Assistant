@@ -1,0 +1,107 @@
+[
+  {
+    "id": "q1",
+    "question": "When does a small merchant receive UPI money?",
+    "as_of_date": "2026-08-15",
+    "expected_status": "CONFLICT_RESOLVED",
+    "expected_citations": [["circular_2026_08_amendment.md", "A"]],
+    "must_contain": ["Instant Settlement", "T+1"]
+  },
+  {
+    "id": "q2",
+    "question": "A large merchant above Rs.10 lakh monthly receives a Rs.4,000 UPI payment. What MDR and GST do they pay?",
+    "as_of_date": "2026-08-15",
+    "expected_status": "CONFLICT_RESOLVED",
+    "expected_citations": [["policy_master_v1.md", "2.2"], ["circular_2026_08_amendment.md", "C"], ["policy_master_v1.md", "2.4"]],
+    "must_contain": ["Rs.20", "Rs.3.60"]
+  },
+  {
+    "id": "q3",
+    "question": "Same large merchant above Rs.10 lakh monthly, a Rs.1,50,000 payment. What do they pay?",
+    "as_of_date": "2026-08-15",
+    "expected_status": "CONFLICT_RESOLVED",
+    "expected_citations": [["circular_2026_08_amendment.md", "C"]],
+    "must_contain": ["Rs.25", "Rs.4.50"]
+  },
+  {
+    "id": "q4a",
+    "question": "A merchant refunds a customer 3 hours after the sale. Do they get the MDR back?",
+    "as_of_date": "2026-08-20",
+    "expected_status": "ANSWERED",
+    "expected_citations": [["policy_master_v1.md", "3.3"]],
+    "must_contain": ["Yes", "24 hours"]
+  },
+  {
+    "id": "q4b",
+    "question": "A merchant refunds a customer 3 hours after the sale. Do they get the MDR back?",
+    "as_of_date": "2026-09-05",
+    "expected_status": "CONFLICT_RESOLVED",
+    "expected_citations": [["circular_2026_08_amendment.md", "D"], ["policy_master_v1.md", "3.2"]],
+    "must_contain": ["No", "01 Sep 2026"]
+  },
+  {
+    "id": "q5",
+    "question": "What does the FAQ say about the MDR cap, and is the FAQ right?",
+    "as_of_date": "2026-08-15",
+    "expected_status": "CONFLICT_RESOLVED",
+    "expected_citations": [["merchant_faq_2026-03.md", "What do I pay on a UPI transaction?"], ["circular_2026_08_amendment.md", "C"]],
+    "must_contain": ["not right", "Rs.15", "Rs.25"]
+  },
+  {
+    "id": "q6",
+    "question": "Can a customer pay Rs.1,00,000 twice in one day to a merchant?",
+    "as_of_date": "2026-08-15",
+    "expected_status": "CONFLICT_RESOLVED",
+    "expected_citations": [["policy_master_v1.md", "4.3"], ["circular_2026_08_amendment.md", "E"]],
+    "must_contain": ["No", "daily"]
+  },
+  {
+    "id": "q7",
+    "question": "I closed my account yesterday. When will I get my money?",
+    "as_of_date": "2026-08-15",
+    "expected_status": "ANSWERED",
+    "expected_citations": [["policy_master_v1.md", "5.2"]],
+    "must_contain": ["10 working days"]
+  },
+  {
+    "id": "q8",
+    "question": "Does the policy allow me to settle card payments same day?",
+    "as_of_date": "2026-08-15",
+    "expected_status": "ANSWERED",
+    "expected_citations": [["policy_master_v1.md", "1.2"]],
+    "must_contain": ["No", "T+2"]
+  },
+  {
+    "id": "adv_old_refund",
+    "question": "If I refund within 24 hours on 15 July 2026 do I get MDR back?",
+    "as_of_date": "2026-07-15",
+    "expected_status": "ANSWERED",
+    "expected_citations": [["policy_master_v1.md", "3.3"]],
+    "must_contain": ["Yes"]
+  },
+  {
+    "id": "adv_missing_volume",
+    "question": "What MDR do I pay on a Rs.4,000 UPI payment?",
+    "as_of_date": "2026-08-15",
+    "expected_status": "CANNOT_ANSWER",
+    "expected_citations": [],
+    "must_contain": ["monthly UPI volume"]
+  },
+  {
+    "id": "adv_insurance_kyc",
+    "question": "Can an Insurance merchant accept Rs.2,00,000 per UPI transaction without enhanced KYC?",
+    "as_of_date": "2026-08-15",
+    "expected_status": "ANSWERED",
+    "expected_citations": [["policy_master_v1.md", "4.2"], ["policy_master_v1.md", "4.4"]],
+    "must_contain": ["enhanced KYC"]
+  },
+  {
+    "id": "adv_small_rate",
+    "question": "A small merchant receives a Rs.10,000 UPI payment. What MDR and GST do they pay?",
+    "as_of_date": "2026-08-15",
+    "expected_status": "CONFLICT_RESOLVED",
+    "expected_citations": [["circular_2026_08_amendment.md", "B"], ["circular_2026_08_amendment.md", "C"]],
+    "must_contain": ["Rs.15", "Rs.2.70"]
+  }
+]
+
